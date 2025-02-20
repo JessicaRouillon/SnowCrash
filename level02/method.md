@@ -16,7 +16,7 @@ level02@SnowCrash:~$ ls -l
 ## 3. Locally download the file (on local computer terminal, not VM):
 
 ```bash
-level02@SnowCrash:~$ scp -P 4242 level02@<*your VM's IP address*>:/home/user/level02/level02.pcap /tmp
+level02@SnowCrash:~$ scp -P 4242 level02@<your VM's IP address>:/home/user/level02/level02.pcap /tmp
 ```
 
 ## 4. Give yourself the rights on the file:

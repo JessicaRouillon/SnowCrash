@@ -19,7 +19,7 @@ level00@SnowCrash:~$ cat /rofs/sbin/john
 
 ## 3. Use [Chiffre Cesar Decoder](https://www.dcode.fr/chiffre-cesar) to decode the password
 
-## 4. Connect to *flag00* user account with the decoded password:
+## 4. Connect to *`flag00`* user account with the decoded password:
 
 ```bash
 level00@SnowCrash:~$ su flag00

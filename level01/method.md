@@ -62,4 +62,3 @@ password: abcde
 ```bash
 flag01@SnowCrash:~$ getflag
 ```
-
