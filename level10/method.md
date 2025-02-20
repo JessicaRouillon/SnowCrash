@@ -37,9 +37,7 @@ level10@SnowCrash:~$ touch race.sh
 
 *See level10/Ressources/race.sh*
 
-The script creates 2 files for which we have the rights to read:
-    - a `random file`
-    - a `link file`
+The script creates 2 files for which we have the rights to read: a `random file` and a `link file`.
 
 First, the script runs the `level10` binary in an infinite loop, redirecting its output to `/dev/null`.
 

@@ -18,12 +18,12 @@ level11@SnowCrash:~$ cat level11.lua
 
 The content of `level11.lua` shows:
 
-That the server runs on localhost, port 5151
+- That the server runs on localhost, port 5151
 ``` bash
 local server = assert(socket.bind("127.0.0.1", 5151))
 ```
 
-That the command `echo [pass] | sha1sum` is executed
+- That the command `echo [pass] | sha1sum` is executed
 ```bash
 prog = io.popen("echo "..pass.." | sha1sum", "r")
 ```
