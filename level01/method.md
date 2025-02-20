@@ -5,12 +5,12 @@ level00@SnowCrash:~$ su level01
 password: *use previously found flag*
 ```
 
-The *`/etc/passwd`* and *`/etc/shadow`* files are crucial in a Linux system for managing user accounts and passwords.
+The `/etc/passwd` and `/etc/shadow` files are crucial in a Linux system for managing user accounts and passwords.
 
-- *`/etc/passwd`* contains information about system users.
-- *`/etc/shadow`* contains users' encrypted (hashed) passwords.
+- `/etc/passwd` contains information about system users.
+- `/etc/shadow` contains users' encrypted (hashed) passwords.
 
-## 2. View *`/etc/shadow`*:
+## 2. View `/etc/shadow`:
 
 ```bash
 level01@SnowCrash:~$ /etc/passwd
@@ -35,7 +35,7 @@ John the Ripper is an open-source password cracking tool. You can find it here: 
 echo "42hDRfypTqqnw" > password.txt
 ```
 
-### Use it with *john* program:
+### Use it with *`john`* program:
 ```bash
 ./john ../../password.txt
 ```
@@ -50,14 +50,14 @@ echo "42hDRfypTqqnw" > password.txt
 ?:abcdefg
 ```
 
-## 5. Use found password *abcde* to log into *flag01*:
+## 5. Use found password *`abcde`* to log into *`flag01`*:
 
 ```bash
 level01@SnowCrash:~$ su flag01
 password: abcde
 ```
 
-## 6. Use *getflag* command to get flag for level02:
+## 6. Use `getflag` command to get flag for level02:
 
 ```bash
 flag01@SnowCrash:~$ getflag
