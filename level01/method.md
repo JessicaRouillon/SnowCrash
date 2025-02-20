@@ -1,43 +1,65 @@
-1. Connect to level01:
+## 1. Connect to level01:
 
-    level00@SnowCrash:~$ su level01
-    password: *use previously found flag*
+```bash
+level00@SnowCrash:~$ su level01
+password: *use previously found flag*
+```
 
+The *`/etc/passwd`* and *`/etc/shadow`* files are crucial in a Linux system for managing user accounts and passwords.
 
-The */etc/passwd* and */etc/shadow* files are crucial in a Linux system for managing user accounts and passwords.
+- *`/etc/passwd`* contains information about system users.
+- *`/etc/shadow`* contains users' encrypted (hashed) passwords.
 
-    */etc/passwd* contains information about system users.
-    */etc/shadow* contains users' encrypted (hashed) passwords.
+## 2. View *`/etc/shadow`*:
 
+```bash
+level01@SnowCrash:~$ /etc/passwd
+```
 
-2. View */etc/shadow*:
+Example output:
 
-    level01@SnowCrash:~$ /etc/passwd
-    [...]
-	flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
-	[...]
+```bash
+[...]
+flag01:42hDRfypTqqnw:3001:3001::/home/flag/flag01:/bin/bash
+[...]
+```
 
+## 3. Install John the Ripper
 
-3. Install John the Ripper (https://github.com/openwall/john)
+John the Ripper is an open-source password cracking tool. You can find it here: [John the Ripper on GitHub](https://github.com/openwall/john)
 
+## 4. Dehash the password using John the Ripper
 
-4. Dehash the password using John the Ripper program:
+### Create a file with the hashed password:
+```bash
+echo "42hDRfypTqqnw" > password.txt
+```
 
-- Create a file with hashed password
-    echo "42hDRfypTqqnw" > password.txt
-- Use it with *john* program
-    ./john ../../password.txt
-- Show the password
-    ./john --show ../../password.txt
-- Result = *?:abcdefg*
+### Use it with *john* program:
+```bash
+./john ../../password.txt
+```
 
+### Show the password:
+```bash
+./john --show ../../password.txt
+```
 
-5. Use found password *abcde* to log into *flag01*:
+### Example result:
+```bash
+?:abcdefg
+```
 
-    level01@SnowCrash:~$ su flag01
-    password: abcde
+## 5. Use found password *abcde* to log into *flag01*:
 
+```bash
+level01@SnowCrash:~$ su flag01
+password: abcde
+```
 
-6. Use *getflag* command to get flag for level02:
+## 6. Use *getflag* command to get flag for level02:
 
-    flag01@SnowCrash:~$ getflag
+```bash
+flag01@SnowCrash:~$ getflag
+```
+
